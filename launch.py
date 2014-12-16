@@ -9,7 +9,7 @@ master = Tk()
 MTitle = master.title("pyWartune: An MMO bot.")
 
 def createBot():
-	#subprocess.call(['python', 'create_bot.py'])
+	subprocess.call(['python', 'create_bot.py'])
 	pass
 
 def loadBot():
