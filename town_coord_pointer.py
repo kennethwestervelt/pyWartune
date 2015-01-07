@@ -4,13 +4,16 @@ from pykeyboard import PyKeyboard
 import subprocess, pickle, tkMessageBox, sys, os
 
 #"/path/to/savefile_town_coords.txt" 
-SAVEFILEPATH = sys.argv[1]
-SAVEFILE = SAVEFILEPATH[0:-4] + "_town_coords" + SAVEFILEPATH[-4:]
+SAVEFILE = sys.argv[1]
+NEW_DIC = pickle.load(open(SAVEFILE, 'r'))
 
-if os.path.isfile(SAVEFILE) == True:
-	NEW_DIC = pickle.load(open(SAVEFILE, 'r'))
-else:
+SAVEFILE_PATH = SAVEFILE[0:-4] + '_coords/town.txt'
+
+
+if os.path.isfile(SAVEFILE_PATH) == False:
 	NEW_DIC = ''
+else:
+	NEW_DIC = pickle.load(open(SAVEFILE_PATH, 'r'))
 
 m = PyMouse()
 k = PyKeyboard()
@@ -115,8 +118,8 @@ def saveCoords():
 	'refineryUpgrade': (refinery.x_upgrade_coord, refinery.y_upgrade_coord),
 	}
 
-	file_name = SAVEFILE
-	if not os.path.exists(SAVEFILE):
+	file_name = SAVEFILE_PATH
+	if not os.path.exists(SAVEFILE_PATH):
 		fileObject = open(file_name, 'w')
 	else:
 		fileObject = open(file_name, 'r + a')
