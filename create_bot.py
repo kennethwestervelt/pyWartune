@@ -3,6 +3,10 @@
 from Tkinter import *
 import subprocess, pickle, tkMessageBox, os
 
+if __name__ == '__main__':
+    tkMessageBox.showerror("WRONG ENTRY", "You should run\nlaunch.py")
+    exit()
+
 master = Tk()
 MTitle = master.title("pyWartune: Create your character.")
 
