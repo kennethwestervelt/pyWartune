@@ -3,6 +3,10 @@ from pymouse import PyMouse
 from pykeyboard import PyKeyboard
 import subprocess, pickle, tkMessageBox, sys, os
 
+if __name__ == '__main__':
+    tkMessageBox.showerror("WRONG ENTRY", "You should run\nlaunch.py")
+    exit()
+
 #"/path/to/savefile_town_coords.txt" 
 SAVEFILE = sys.argv[1]
 NEW_DIC = pickle.load(open(SAVEFILE, 'r'))
