@@ -1,6 +1,10 @@
 from pymouse import PyMouse
 from pykeyboard import PyKeyboard
-import time, random, pickle, sys
+import time, random, pickle, sys, tkMessageBox
+
+if __name__ == '__main__':
+    tkMessageBox.showerror("WRONG ENTRY", "You should run\nlaunch.py")
+    exit()
 
 m = PyMouse()
 k = PyKeyboard()
